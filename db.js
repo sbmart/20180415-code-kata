@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-conts Conn = new Sequelize(
+const Conn = new Sequelize(
     'relay',
     'dev',
     'dev',
@@ -13,5 +13,16 @@ const Person = Conn.define('person', {
     firstName: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    lastName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            isEmail: true
+        }
     }
 })
