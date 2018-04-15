@@ -44,6 +44,8 @@ const Post = Conn.define('post', {
 Person.hasMany(Post);
 Post.belongsTo(Person);
 
+//Generates no more than ~15K instances on my machine
+// With 14K persons PersonTableSize is 1256kb on pg10
 Conn.sync({force: true}).then(()=>{
 _.times(100, ()=>{
     return Person.create({
@@ -51,7 +53,12 @@ _.times(100, ()=>{
         lastName: Faker.name.lastName(),
         // email: Faker.internet.exampleEmail()
         email: Faker.internet.email()
-    })
+    }).then(person => {
+        return person.createPost({
+            title: `Sample title by ${person.firstName}`,
+            content: 'This is a fancy Article of their own'
+        });
+    });
 });
 });
 
