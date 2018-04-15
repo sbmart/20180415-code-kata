@@ -1,20 +1,23 @@
 {
-  "name": "p",
+  "name": "graphql-kata",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple repo to exercise qraphql",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["sequelize", "graphql", "postgresql", "react" ],
+  "author": "sbmart",
   "license": "ISC",
   "dependencies": {
     "babel-preset-env": "^1.6.1",
     "faker": "^4.1.0",
+    "graphql": "^0.13.2",
     "lodash": "^4.17.5",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "sequelize": "^4.37.6"
   }
 }
