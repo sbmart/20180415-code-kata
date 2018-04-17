@@ -48,6 +48,7 @@ Post.belongsTo(Person);
 // With 14K persons PersonTableSize is 1256kb on pg10
 // lazy GC=>>
 // https://github.com/elastic/kibana/issues/5595
+// https://blog.risingstack.com/finding-a-memory-leak-in-node-js/
 Conn.sync({force: true}).then(()=>{
 _.times(100, ()=>{
     return Person.create({
